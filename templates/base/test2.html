@@ -1,0 +1,245 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="基于Django的视频点播网站">
+    <meta name="google-site-verification" content="UhrjUG70pwiY6Sp4u4p5Q3ol8iD7yx4ZSwmGBpoaWik">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <title>视点</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/semantic.custom.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+
+    <script src="https://hm.baidu.com/hm.js?e3be3decd24d944e0bc592558617d210"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3be3decd24d944e0bc592558617d210";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-7751395790281530",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+
+<body style="zoom: 1;">
+    <div class="ui sticky fixed  menu">
+        <div class="ui container">
+            <a href="/" class="borderless header item">
+                <img class="logo" src="/static/img/logo.png">
+                视点
+            </a>
+            <div class="v-header-extra">
+                <div class="ui small icon input v-video-search">
+                    <input class="prompt" value="" type="text" placeholder="搜索视频" id="v-search">
+                    <i id="search" class="search icon" style="cursor:pointer;"></i>
+                </div>
+
+
+                <div class="ui inline dropdown" id="v-header-avatar" style="" tabindex="0">
+                    <div class="" style="display:inline-block;font-weight:bold;">
+
+                        <img class="ui avatar image" src="/upload/cache/f1/9f/f19f1427eb221bf3c6a1ada340461d5a.jpg">
+
+                        admin123
+                    </div>
+                    <i class="dropdown icon" tabindex="0">
+                        <div class="menu" tabindex="-1"></div>
+                    </i>
+                    <div class="menu" tabindex="-1">
+                        <div class="item" onclick="window.location='/users/profile/4/';">
+                            <i class="user icon"></i>
+                            <span>个人资料</span>
+                        </div>
+                        <div class="item" onclick="window.location='/users/4/collect_videos/';">
+                            <i class="bookmark icon"></i>
+                            <span>我的收藏</span>
+                        </div>
+                        <div class="item" onclick="window.location='/users/4/like_videos/';">
+                            <i class="heart icon"></i>
+                            <span>我的喜欢</span>
+                        </div>
+                        <div class="item" onclick="window.location='/users/logout/';">
+                            <i class="sign-out icon"></i>
+                            <span>退出</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+    <div class="ui container" id="v-content">
+        <div class="v-settings">
+            <div class="ui two column grid ">
+                <div class="four wide column">
+                    <div class="ui secondary vertical pointing menu">
+                        <a id="id_profile" class="link item active" href="/users/profile/4/">
+                            <i class="grey user icon"></i>
+                            <span class="v-nav-title">个人资料</span>
+                        </a>
+                        <a id="id_password" class="link item" href="/users/change_password/">
+                            <i class="grey edit icon"></i>
+                            <span class="v-nav-title">修改密码</span>
+                        </a>
+                        <a id="id_subscribe" class="link item" href="/users/subscribe/4/">
+                            <i class="grey rss icon"></i>
+                            <span class="v-nav-title">订阅设置</span>
+                        </a>
+                        <a id="id_feedback" class="link item" href="/users/feedback/">
+                            <i class="grey list icon"></i>
+                            <span class="v-nav-title">反馈与建议</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="twelve wide column">
+                    <div class="v-settings-content">
+
+                        <form class="ui form" novalidate="" method="post" action="/users/profile/4/"
+                            enctype="multipart/form-data" role="form">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="ClDCn5Yp45QcMKWabjY0SXvvHIr41o0f98cj4fxxN04EKtG7R5CVPqMFOrNzxc6r">
+                            <div class="sixteen wide inline field v-form-field">
+                                <label>头像</label>
+                                <div class="v-inline-middle">
+                                    <label for="id_avatar">
+
+                                        <img class="ui mini circular image"
+                                            src="/upload/cache/f1/9f/f19f1427eb221bf3c6a1ada340461d5a.jpg">
+
+                                    </label>
+                                    <input type="file" name="avatar" accept="image/*" id="id_avatar" class="n">
+                                    <span id="file_is_choose" class="n">文件已选择</span>
+
+                                </div>
+                            </div>
+
+                            <div class="sixteen wide inline field v-form-field">
+                                <label>昵称</label>
+                                <input type="text" name="nickname" value="marshmello" minlength="1" maxlength="20"
+                                    id="id_nickname">
+                            </div>
+
+                            <div class="sixteen wide inline field v-form-field">
+                                <label>Email</label>
+                                <input type="email" name="email" value="gravity007007@163.com" id="id_email">
+                            </div>
+
+                            <div class="sixteen wide inline field v-form-field">
+                                <label>手机号</label>
+                                <input type="number" name="mobile" value="13504113511" minlength="11" maxlength="11"
+                                    id="id_mobile">
+                            </div>
+
+                            <div class="sixteen wide inline field v-form-field">
+                                <label>性别</label>
+                                <div class="ui selection  dropdown" tabindex="0">
+                                    <input type="hidden" name="gender" value="F" id="id_gender">
+                                    <i class="dropdown icon" tabindex="0">
+                                        <div class="menu" tabindex="-1"></div>
+                                    </i>
+                                    <div class="text">女</div>
+                                    <div class="menu" tabindex="-1">
+                                        <div class="item" data-value="M">男</div>
+                                        <div class="item active selected" data-value="F">女</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="ui primary button" type="submit">保存</button>
+
+
+
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="ui vertical footer segment ">
+        <div class="ui center aligned container">
+            <div class="ui divider"></div>
+            <img src="/static/img/logo.png" class="ui centered mini image">
+            <div class="ui horizontal   small divided link list">
+                <a class="item" href="#">北京堆栈科技有限公司</a>
+                <a class="item" href="#">联系我们</a>
+                <a class="item" href="#">京ICP证090287</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.staticfile.org/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script>
+        var search_url = "/video/search/"
+    </script>
+    <script src="/static/js/header.js"></script>
+
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $('.ui .dropdown').dropdown();
+
+            $("#id_avatar").change(function () {
+                $("#file_is_choose").show()
+            });
+
+        });
+
+    </script>
+    <script src="/static/js/left_nav.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
