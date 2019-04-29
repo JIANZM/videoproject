@@ -1,4 +1,4 @@
-#!usr/bin/env bash
+#!/bin/bash
 
 #django项目数据库初始化脚本
 #需要先创建数据库
