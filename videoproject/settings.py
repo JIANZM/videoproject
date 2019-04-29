@@ -24,7 +24,7 @@ SECRET_KEY = 'y-i+dj&m@dd7@@unus5xe%r^c&_o8_yleev+70#+m9dv)a+res'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.100.25']
 
 SITE_URL = 'http://127.0.0.1:8000'
 
@@ -159,6 +159,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'upload'),
 )
+
+STATIC_ROOT='/static/'
 
 # 文件上传路径
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload').replace('\\', '/')
