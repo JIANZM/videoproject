@@ -19,7 +19,7 @@
                                 {% thumbnail user.avatar "200x200" crop="center" as im %}
                                 <img src="{{  im.url }}" class="ui mini circular image">
                                 {% empty %}
-                                <img src="{% static 'img/img_defalut_avatar.png' %}" class="ui mini circular"
+                                <img src="{% static 'img/img_default_avatar.png' %}" class="ui mini circular"
                                      width="200" height="200">
                                 {% endthumbnail %}
                             </label>

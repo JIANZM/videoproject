@@ -1,29 +1,30 @@
 {% extends 'base/base.html' %}
-{% load video_tag %}
 {% load static %}
-
+{% load video_tag %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/dropload.css' %}">
 {% endblock css %}
 
 {% block content %}
-<div class="ui unstackalbe two column grid">
-    <div class="ten wide column">
-        <video class="video" autoplay controls>
-            <source src="{{ video.file.url }}" type="video/mp4">
+<div class="ui unstackable two column grid">
+    <div class=" ten wide column">
+        <video class="video" autoplay="autoplay" controls="controls" controlslist="nodownload" disablePictureInPicture>
+            <source src="{{video.file.url}}" type="video/mp4">
         </video>
         <div class="video-info">
             <div class="video-title">{{ video.title }}</div>
             <div class="video-view-count">{{ video.view_count }}次观看</div>
-            <div class="video-view-operation">{{ video.desc }}</div>
+            <div class="video-view-operation">
+                {{video.desc}}
+            </div>
             <div class="extra content video-view-operation">
-                <span id="left floated like">
-                    <i class="like {% user_liked_class video user %} icon cursor" id="like"
+                <span class="left floated like">
+                    <i class="like {%  user_liked_class video user %} icon cursor" id="like"
                         video-id="{{ video.id }}"></i>
                     <span id="like-count">{{ video.count_likers }}</span>
                 </span>
-                <span id="right floated start">
-                    <i class="bookmark {% user_collected_class video user %} icon cursor" id="star"
+                <span class="right floated star">
+                    <i class="bookmark {%  user_collected_class video user %}  icon cursor" id="star"
                         video-id="{{ video.id }}"></i>
                     <span id="collect-count">{{ video.count_collecters }}</span>
                 </span>
@@ -60,12 +61,15 @@
     </div>
 </div>
 {% endblock content %}
+
 {% block javascript %}
+
 <script>
     var comments_url = "{% url 'comment:get_comments' %}"
     var video_id = {{ video.id }}
 </script>
+
 <script src="{% static 'js/dropload.js' %}"></script>
-<script src="{% static 'js/load_comment.js' %}"></script>
+<script src="{% static 'js/load_comments.js' %}"></script>
 <script src="{% static 'js/detail.js' %}"></script>
 {% endblock javascript %}

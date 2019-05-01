@@ -1,3 +1,4 @@
+
 body {
     margin:0px;
     background-color: #FFFFFF;
@@ -51,12 +52,12 @@ body {
   max-width: 450px;
 }
 
-.video{
+.video{ 
       width: 100%;
-      height: auto;
+      height: auto; 
 }
 
-.v-video-search{
+.v-video-search{ 
     margin-right: 3em;
     width: 30%;
 }
@@ -69,15 +70,15 @@ body {
     height: 5.66em;
 }
 
-.v-header-extra{
-    position: relative;
+.v-header-extra{  
+    position: relative; 
     width:100%;
-    text-align: right;
+    text-align: right;    
     padding-top: 0.60rem;
-}
-
+}  
+ 
 .v-play-icon{
-    position: absolute;
+    position: absolute; 
     left: 1.0rem;
     bottom: 1.0rem;
     color: #fff;
@@ -86,16 +87,16 @@ body {
 .ui .card .image{
     cursor: pointer;
 }
-
+ 
 
 .v-icon{
     float: left;
 }
-
+ 
 .video-duration{
-	position: absolute;
+	position: absolute; 
 	bottom: 0px;
-    left: 4px;
+    left: 4px; 
     color: #fff;
 }
 
@@ -114,7 +115,7 @@ body {
     line-height: 1em;
     -ms-flex: 1 1 0.000000001px;
     -webkit-flex: 1;
-    flex: 1;
+    flex: 1; 
 }
 
 .video-side-title{
@@ -124,7 +125,7 @@ body {
     line-height: 1em;
     -ms-flex: 1 1 0.000000001px;
     -webkit-flex: 1;
-    flex: 1;
+    flex: 1; 
 }
 
 .video-view-count{

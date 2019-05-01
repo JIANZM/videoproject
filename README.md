@@ -1,2 +1,2 @@
 # videoproject
-基于django的视频播放网站
+基于nginx-uWSGI-django-mysql的视频播放网站

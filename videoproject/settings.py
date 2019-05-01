@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y-i+dj&m@dd7@@unus5xe%r^c&_o8_yleev+70#+m9dv)a+res'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.100.25']
+ALLOWED_HOSTS = ['*']
 
 SITE_URL = 'http://127.0.0.1:8000'
 

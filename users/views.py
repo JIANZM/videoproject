@@ -118,7 +118,7 @@ class CollectListView(generic.ListView):
     model = User
     template_name = 'users/collect_videos.html'
     context_object_name = 'video_list'
-    paginate_by = 2
+    paginate_by = 8
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CollectListView, self).get_context_data(**kwargs)
@@ -138,7 +138,7 @@ class LikeListView(generic.ListView):
     model = User
     template_name = 'users/like_videos.html'
     context_object_name = 'video_list'
-    paginate_by = 2
+    paginate_by = 8
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(LikeListView, self).get_context_data(**kwargs)

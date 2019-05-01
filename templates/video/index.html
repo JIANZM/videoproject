@@ -4,7 +4,8 @@
 <div class="classification">
     <a class="ui {% if c %}{% else %}red{% endif %} label" href="{% url 'home' %}">全部</a>
     {% for item in classification_list %}
-    <a class="ui {% if c == item.id|stringformat:'s' %}red{% endif %} label" href="?c={{ item.id }}">{{ item.title }}</a>
+    <a class="ui {% if c == item.id|stringformat:'s' %}red{% endif %} label"
+        href="?c={{ item.id }}">{{ item.title }}</a>
     {% endfor %}
 </div>
 
