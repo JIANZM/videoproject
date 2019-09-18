@@ -1,119 +1,281 @@
-<html>
-
-<head>
-
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <meta name="description" content="基于Django的视频点播网站">
+    <meta name="author" content="1264569735@qq.com">
+    <meta name="google-site-verification" content="UhrjUG70pwiY6Sp4u4p5Q3ol8iD7yx4ZSwmGBpoaWik">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <title>视点</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-
+    
+<link rel="stylesheet" href="/static/css/dropload.css">
 
 </head>
 
 <body style="zoom: 1;">
+    
 
 
+<div class="ui sticky fixed  menu">
+    <div class="ui container">
+        <a href="/" class="borderless header item">
+            <img class="logo" src="/static/img/logo.jpg" width="36" height="36">
+            视点
+        </a>
+        <div class="v-header-extra">
+            <div class="ui small icon input v-video-search">
+                <input class="prompt" value="" type="text" placeholder="搜索视频" id="v-search">
+                <i id="search" class="search icon" style="cursor:pointer;"></i>
+            </div>
 
-
-
-    <div class="ui container" id="v-content">
-
-
-
-        <div class="v-settings">
-            <div class="ui two column grid ">
-                <div class="twelve wide column">
-                    <div class="v-settings-content">
-
-                        <form class="ui form" novalidate="" method="post" action="/users/profile/4/"
-                            enctype="multipart/form-data" role="form">
-                            <input type="hidden" name="csrfmiddlewaretoken"
-                                value="UZOKNGVrSMT5Cu2ZagqgOrIp49SQAROzrMnruQuzBH7xAdMWQ24bLUZzbSel6FUL">
-                            <div class="sixteen wide inline field v-form-field">
-                                <label>头像</label>
-                                <div class="v-inline-middle">
-                                    <label for="id_avatar">
-
-                                        <img class="ui mini circular image"
-                                            src="/upload/cache/f1/9f/f19f1427eb221bf3c6a1ada340461d5a.jpg">
-
-                                    </label>
-                                    <input type="file" name="avatar" accept="image/*" id="id_avatar" class="n">
-                                    <span id="file_is_choose" class="n">文件已选择</span>
-
-                                </div>
-                            </div>
-
-                            <div class="sixteen wide inline field v-form-field">
-                                <label>昵称</label>
-                                <input type="text" name="nickname" value="marshmello" minlength="1" maxlength="20"
-                                    id="id_nickname">
-                            </div>
-
-                            <div class="sixteen wide inline field v-form-field">
-                                <label>Email</label>
-                                <input type="email" name="email" value="gravity007007@163.com" id="id_email">
-                            </div>
-
-                            <div class="sixteen wide inline field v-form-field">
-                                <label>手机号</label>
-                                <input type="number" name="mobile" value="13504113511" minlength="11" maxlength="11"
-                                    id="id_mobile">
-                            </div>
-
-                            <div class="sixteen wide inline field v-form-field">
-                                <label>性别</label>
-                                <div class="ui selection  dropdown" tabindex="0">
-                                    <input type="hidden" name="gender" value="F" id="id_gender">
-                                    <i class="dropdown icon" tabindex="0">
-                                        <div class="menu" tabindex="-1"></div>
-                                    </i>
-                                    <div class="text">女</div>
-                                    <div class="menu transition hidden" tabindex="-1">
-                                        <div class="item" data-value="M">男</div>
-                                        <div class="item active selected" data-value="F">女</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button class="ui primary button" type="submit">保存</button>
-
-
-
-
-
-                        </form>
+            
+            <div class="ui inline dropdown" id="v-header-avatar" style="" tabindex="0">
+                <div class="" style="display:inline-block;font-weight:bold;">
+                    
+                    <img class="ui avatar image" src="/static/img/img_default_avatar.png">
+                    
+                    admin123
+                </div>
+                <i class="dropdown icon"></i>
+                <div class="menu" tabindex="-1">
+                    <div class="item" onclick="window.location='/users/profile/2/';">
+                        <i class="user icon"></i>
+                        <span>个人资料</span>
+                    </div>
+                    <div class="item" onclick="window.location='/users/2/collect_videos/';">
+                        <i class="bookmark icon"></i>
+                        <span>我的收藏</span>
+                    </div>
+                    <div class="item" onclick="window.location='/users/2/like_videos/';">
+                        <i class="heart icon"></i>
+                        <span>我的喜欢</span>
+                    </div>
+                    <div class="item" onclick="window.location='/users/logout/';">
+                        <i class="sign-out icon"></i>
+                        <span>退出</span>
                     </div>
                 </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    <div class="ui container" id="v-content">
+        
+<div class="ui unstackable two column grid">
+    <div class=" ten wide column">
+        <video class="video" autoplay="autoplay" controls="controls" controlslist="nodownload" disablepictureinpicture="">
+            <source src="/upload/%E9%A5%BF%E7%8B%BC%E4%BC%A0%E8%AF%B4-%E5%BC%A0%E9%9D%93%E9%A2%96.mp4" type="video/mp4">
+        </video>
+        <div class="video-info">
+            <div class="video-title">饿狼传说-张靓颖</div>
+            <div class="video-view-count">45次观看</div>
+            <div class="video-view-operation">
+                饿狼传说-张靓颖
+            </div>
+            <div class="extra content video-view-operation">
+                <span class="left floated like">
+                    <i class="like grey icon cursor" id="like" video-id="11"></i>
+                    <span id="like-count">2</span>
+                </span>
+                <span class="right floated star">
+                    <i class="bookmark grey  icon cursor" id="star" video-id="11"></i>
+                    <span id="collect-count">2</span>
+                </span>
+            </div>
+            <div class="ui divider"></div>
+        </div>
+        <div class="ui comments">
+            
+            <form class="ui reply form" id="comment_form" method="post" action="/comment/submit_comment/11">
+                <input type="hidden" name="csrfmiddlewaretoken" value="OE277ziea2B6wiw2qAIIt7xpLsVnOAxCRzIVzFNIu2CzVJILCW1108Kt7vO6D88R">
+                <div class="field">
+                    <textarea name="content" cols="40" rows="10" placeholder="请输入评论内容" required="" id="id_content"></textarea>
+                    <input type="hidden" value="11" name="video_id">
+                </div>
+                <button class="ui primary button" type="submit">
+                    添加评论
+                </button>
+                <div class="ui info message n">
+                    <div class="item" id="comment-result"></div>
+                </div>
+            </form>
+            
+            <h3 class="ui dividing header" id="id_comment_label">3条评论</h3>
+            <div class="comment-list">
 
+
+
+
+<div class="comment">
+    <a class="avatar">
+
+        
+        <img class="ui avatar image" src="/upload/cache/a8/39/a839ca9d52408ba1fd4af9ef69285325.jpg">
+        
+
+    </a>
+    <div class="content">
+        <a class="author">
+             xiaoming 
+        </a>
+        <div class="metadata">
+            <span class="date">4&nbsp;日，19&nbsp;小时</span>
+        </div>
+        <div class="text">
+            12re32t43yt
+        </div>
+    </div>
+</div>
+
+<div class="comment">
+    <a class="avatar">
+
+        
+        <img class="ui avatar image" src="/upload/cache/a8/39/a839ca9d52408ba1fd4af9ef69285325.jpg">
+        
+
+    </a>
+    <div class="content">
+        <a class="author">
+             xiaoming 
+        </a>
+        <div class="metadata">
+            <span class="date">4&nbsp;日，19&nbsp;小时</span>
+        </div>
+        <div class="text">
+            12r21r3t
+        </div>
+    </div>
+</div>
+
+<div class="comment">
+    <a class="avatar">
+
+        
+        <img class="ui avatar image" src="/upload/cache/a8/39/a839ca9d52408ba1fd4af9ef69285325.jpg">
+        
+
+    </a>
+    <div class="content">
+        <a class="author">
+             xiaoming 
+        </a>
+        <div class="metadata">
+            <span class="date">4&nbsp;日，19&nbsp;小时</span>
+        </div>
+        <div class="text">
+            12e125r
+        </div>
+    </div>
+</div>
+</div>
+        <div class="dropload-down"><div class="dropload-refresh">↑上拉加载更多</div></div></div>
+    </div>
+    <div class="six wide column">
+        
+
+<span class="video-side-title">推荐列表</span>
+<div class="ui unstackable divided items">
+
+    
+    <div class="item">
+        <div class="ui tiny image">
+            
+            <img class="ui image" src="/upload/cache/89/fc/89fcb1deb80062f62d4bbb5f0d8b876f.jpg">
+            
+        </div>
+        <div class="middle aligned content">
+            <a class=" header-title" href="/video/detail/11/">饿狼传说-张靓颖</a>
+            <div class="meta">
+                <span class="description">45次观看</span>
             </div>
         </div>
+    </div>
+    
+    <div class="item">
+        <div class="ui tiny image">
+            
+            <img class="ui image" src="/upload/cache/a2/6c/a26c7699d54fd319c4dc9bd481cfe2bd.jpg">
+            
+        </div>
+        <div class="middle aligned content">
+            <a class=" header-title" href="/video/detail/6/">天下无双-张靓颖</a>
+            <div class="meta">
+                <span class="description">5次观看</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="item">
+        <div class="ui tiny image">
+            
+            <img class="ui image" src="/upload/cache/3a/f5/3af5fa41eda7735fb0e3231ea61d6cc3.jpg">
+            
+        </div>
+        <div class="middle aligned content">
+            <a class=" header-title" href="/video/detail/5/">光年之外-邓紫琪</a>
+            <div class="meta">
+                <span class="description">4次观看</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="item">
+        <div class="ui tiny image">
+            
+            <img class="ui image" src="/upload/cache/d2/ce/d2ced59b9654e9b19ea03d2fc724075f.jpg">
+            
+        </div>
+        <div class="middle aligned content">
+            <a class=" header-title" href="/video/detail/10/">雨蝶-邓紫琪，张靓颖</a>
+            <div class="meta">
+                <span class="description">4次观看</span>
+            </div>
+        </div>
+    </div>
+    
 
+</div>
+    </div>
+</div>
 
     </div>
+    
 
-
+<div class="ui vertical footer segment ">
+    <div class="ui center aligned container">
+        <div class="ui divider"></div>
+        <img src="/static/img/logo.jpg" class="ui centered mini image">
+        <div class="ui horizontal   small divided link list">
+            <a class="item" href="#">简宗明</a>
+            <a class="item" href="#">1264569735@qq.com</a>
+        </div>
+    </div>
+</div>
 
     <script src="https://cdn.staticfile.org/jquery/1.9.0/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.js"></script>
-
-    <script type="text/javascript">
-
-        $(function () {
-
-            $('.ui .dropdown').dropdown();
-
-            $("#id_avatar").change(function () {
-                $("#file_is_choose").show()
-            });
-
-        });
-
+    <script>
+        var search_url = "/video/search"
     </script>
+    <script src="/static/js/header.js"></script>
+
+    
+
+<script>
+    var comments_url = "/comment/get_comments/"
+    var video_id = 11
+</script>
+
+<script src="/static/js/dropload.js"></script>
+<script src="/static/js/load_comments.js"></script>
+<script src="/static/js/detail.js"></script>
+
+
+    
+    
 
 
 
-
-
-
-</body>
-
-</html>
+</body></html>

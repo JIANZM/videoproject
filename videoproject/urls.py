@@ -25,5 +25,6 @@ urlpatterns = [
                   path('video/', include('video.urls')),
                   path('comment/', include('comment.urls')),
                   path('myadmin/', include('myadmin.urls')),
+                  path('index/', views.IndexView.as_view(), name='home'),
                   path('', views.IndexView.as_view(), name='home'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

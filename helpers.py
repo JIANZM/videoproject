@@ -6,6 +6,7 @@ from django.shortcuts import redirect
 from django.utils.html import strip_tags
 from django.conf import settings
 from django.core.mail import send_mass_mail, send_mail
+from django.core.exceptions import PermissionDenied
 
 
 def get_page_list(paginator, page):
@@ -44,7 +45,7 @@ class AuthorRequiredMixin(View):
     def dispatch(self, request, *args, **kwargs):
         obj = self.get_object()
         if obj != self.request.user:
-            raise PermissionError
+            raise PermissionDenied('用户无权限')
         return super().dispatch(request, *args, **kwargs)
 
 

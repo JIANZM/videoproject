@@ -22,11 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y-i+dj&m@dd7@@unus5xe%r^c&_o8_yleev+70#+m9dv)a+res'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-SITE_URL = 'http://127.0.0.1:8000'
 
 # Application definition
 
@@ -85,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'video',
-        'USER': 'root',
+        'USER': 'python01',
         'PASSWORD': 's@123456',
         'HOST': 'localhost',
         'PORT': '3306',
@@ -154,13 +153,13 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static_dev'),
+)
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 文件上传路径
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload').replace('\\', '/')

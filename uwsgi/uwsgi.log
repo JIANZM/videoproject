@@ -174,3 +174,116 @@ worker 4 buried after 1 seconds
 goodbye to uWSGI.
 VACUUM: pidfile removed.
 VACUUM: unix socket /home/python01/Learn/videoproject/videoproject/uwsgi/uwsgi.status (stats) removed.
+*** Starting uWSGI 2.0.18 (64bit) on [Wed May  1 22:11:18 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-28) on 26 March 2019 06:49:24
+os: Linux-3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python01/Learn/videoproject/videoproject
+writing pidfile to /home/python01/Learn/videoproject/videoproject/uwsgi/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /home/python01/Learn/videoproject/videoproject
+your processes number limit is 4096
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8080 fd 3
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 6
+Python version: 3.6.6 (default, Aug 13 2018, 18:24:23)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-28)]
+Set PythonHome to /home/python01/Learn/videoproject/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xbd1840
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364600 bytes (356 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xbd1840 pid: 27382 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 27382)
+spawned uWSGI worker 1 (pid: 27397, cores: 1)
+spawned uWSGI worker 2 (pid: 27398, cores: 1)
+spawned uWSGI worker 3 (pid: 27399, cores: 1)
+spawned uWSGI worker 4 (pid: 27400, cores: 1)
+*** Stats server enabled on /home/python01/Learn/videoproject/videoproject/uwsgi/uwsgi.status fd: 18 ***
+spawned uWSGI http 1 (pid: 27401)
+invalid request block size: 21573 (max 4096)...skip
+*** Starting uWSGI 2.0.18 (64bit) on [Wed May  1 22:37:13 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-28) on 26 March 2019 06:49:24
+os: Linux-3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python01/Learn/videoproject/videoproject
+writing pidfile to /home/python01/Learn/videoproject/videoproject/uwsgi/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /home/python01/Learn/videoproject/videoproject
+your processes number limit is 4096
+your memory page size is 4096 bytes
+detected max file descriptor number: 4096
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8000).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 27397|app: 0|req: 1/1] 192.168.100.25 () {42 vars in 828 bytes} [Wed May  1 22:38:13 2019] GET /video/index => generated 9423 bytes in 155 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 27399|app: 0|req: 1/2] 192.168.100.25 () {42 vars in 832 bytes} [Wed May  1 22:38:36 2019] GET /myadmin/index => generated 0 bytes in 57 msecs (HTTP/1.1 301) 3 headers in 120 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 1/3] 192.168.100.25 () {42 vars in 834 bytes} [Wed May  1 22:38:36 2019] GET /myadmin/index/ => generated 4997 bytes in 83 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 27397|app: 0|req: 2/4] 192.168.100.25 () {42 vars in 818 bytes} [Wed May  1 22:38:49 2019] GET /admin/ => generated 7371 bytes in 50 msecs (HTTP/1.1 200) 6 headers in 227 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 2/5] 192.168.100.25 () {42 vars in 791 bytes} [Wed May  1 22:38:50 2019] GET /favicon.ico => generated 85 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 27399|app: 0|req: 2/6] 192.168.100.25 () {44 vars in 876 bytes} [Wed May  1 22:38:53 2019] GET /admin/logout/ => generated 1208 bytes in 79 msecs (HTTP/1.1 200) 6 headers in 298 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 3/7] 192.168.100.25 () {44 vars in 825 bytes} [Wed May  1 22:38:56 2019] GET /admin/ => generated 0 bytes in 6 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 0)
+[pid: 27399|app: 0|req: 3/8] 192.168.100.25 () {44 vars in 862 bytes} [Wed May  1 22:38:56 2019] GET /admin/login/?next=/admin/ => generated 1821 bytes in 18 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 4/9] 192.168.100.25 () {52 vars in 1058 bytes} [Wed May  1 22:39:00 2019] POST /admin/login/?next=/admin/ => generated 0 bytes in 140 msecs (HTTP/1.1 302) 9 headers in 559 bytes (1 switches on core 0)
+[pid: 27397|app: 0|req: 3/10] 192.168.100.25 () {46 vars in 912 bytes} [Wed May  1 22:39:01 2019] GET /admin/ => generated 7371 bytes in 16 msecs (HTTP/1.1 200) 6 headers in 227 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  2 11:12:33 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-28) on 26 March 2019 06:49:24
+os: Linux-3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python01/Learn/videoproject/videoproject
+writing pidfile to /home/python01/Learn/videoproject/videoproject/uwsgi/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /home/python01/Learn/videoproject/videoproject
+your processes number limit is 4096
+your memory page size is 4096 bytes
+detected max file descriptor number: 4096
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8000).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 27397|app: 0|req: 4/11] 192.168.100.25 () {42 vars in 806 bytes} [Thu May  2 11:13:21 2019] GET / => generated 9431 bytes in 49 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 5/12] 192.168.100.25 () {44 vars in 876 bytes} [Thu May  2 11:13:23 2019] GET /video/detail/11/ => generated 7937 bytes in 44 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 6/13] 192.168.100.25 () {44 vars in 930 bytes} [Thu May  2 11:13:33 2019] GET /comment/get_comments/?video_id=11&page=1&page_size=15 => generated 1580 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27397|app: 0|req: 5/14] 192.168.100.25 () {44 vars in 930 bytes} [Thu May  2 11:13:36 2019] GET /comment/get_comments/?video_id=11&page=2&page_size=15 => generated 43 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 7/15] 192.168.100.25 () {46 vars in 907 bytes} [Thu May  2 11:13:41 2019] GET /video/detail/11/ => generated 7937 bytes in 27 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 8/16] 192.168.100.25 () {44 vars in 930 bytes} [Thu May  2 11:13:43 2019] GET /comment/get_comments/?video_id=11&page=1&page_size=15 => generated 1580 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 9/17] 192.168.100.25 () {46 vars in 907 bytes} [Thu May  2 11:13:50 2019] GET /video/detail/11/ => generated 7937 bytes in 34 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 10/18] 192.168.100.25 () {44 vars in 930 bytes} [Thu May  2 11:13:50 2019] GET /comment/get_comments/?video_id=11&page=1&page_size=15 => generated 1580 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 11/19] 192.168.100.25 () {46 vars in 907 bytes} [Thu May  2 11:14:41 2019] GET /video/detail/11/ => generated 7937 bytes in 24 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 12/20] 192.168.100.25 () {44 vars in 930 bytes} [Thu May  2 11:14:42 2019] GET /comment/get_comments/?video_id=11&page=1&page_size=15 => generated 1580 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 13/21] 192.168.100.25 () {44 vars in 930 bytes} [Thu May  2 11:14:44 2019] GET /comment/get_comments/?video_id=11&page=2&page_size=15 => generated 43 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 14/22] 192.168.100.25 () {44 vars in 860 bytes} [Thu May  2 11:18:52 2019] GET / => generated 9431 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 15/23] 192.168.100.25 () {44 vars in 876 bytes} [Thu May  2 11:18:53 2019] GET /video/detail/11/ => generated 7937 bytes in 23 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 16/24] 192.168.100.25 () {44 vars in 930 bytes} [Thu May  2 11:18:55 2019] GET /comment/get_comments/?video_id=11&page=1&page_size=15 => generated 1580 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 17/25] 192.168.100.25 () {44 vars in 930 bytes} [Thu May  2 11:18:57 2019] GET /comment/get_comments/?video_id=11&page=2&page_size=15 => generated 43 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 27397|app: 0|req: 6/26] 192.168.100.25 () {46 vars in 907 bytes} [Thu May  2 11:20:59 2019] GET /video/detail/11/ => generated 7937 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 27397|app: 0|req: 7/27] 192.168.100.25 () {44 vars in 930 bytes} [Thu May  2 11:27:13 2019] GET /comment/get_comments/?video_id=11&page=1&page_size=15 => generated 1580 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27397|app: 0|req: 8/28] 192.168.100.25 () {44 vars in 860 bytes} [Thu May  2 11:51:31 2019] GET / => generated 9431 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 27400|app: 0|req: 18/29] 192.168.100.25 () {44 vars in 874 bytes} [Thu May  2 11:51:33 2019] GET /video/detail/4/ => generated 7909 bytes in 24 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 27401)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket /home/python01/Learn/videoproject/videoproject/uwsgi/uwsgi.status (stats) removed.

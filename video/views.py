@@ -1,10 +1,12 @@
 from django.views import generic
-from .models import Video, Classification
 from django.shortcuts import get_object_or_404
-from helpers import get_page_list, ajax_required
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
+
+
 from .forms import CommentForm
+from .models import Video, Classification
+from helpers import get_page_list, ajax_required
 
 
 # Create your views here.

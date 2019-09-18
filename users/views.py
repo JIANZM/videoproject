@@ -114,7 +114,7 @@ class SubscribeView(LoginRequiredMixin, AuthorRequiredMixin, generic.UpdateView)
         return reverse('users:subscribe', kwargs={'pk': self.request.user.pk})
 
 
-class CollectListView(generic.ListView):
+class CollectListView(LoginRequiredMixin, AuthorRequiredMixin, generic.ListView):
     model = User
     template_name = 'users/collect_videos.html'
     context_object_name = 'video_list'
@@ -133,8 +133,12 @@ class CollectListView(generic.ListView):
         videos = user.collected_videos.all().order_by('-create_time')
         return videos
 
+    def get_object(self):
+        user = get_object_or_404(User, pk=self.kwargs.get('pk'))
+        return user
 
-class LikeListView(generic.ListView):
+
+class LikeListView(LoginRequiredMixin, AuthorRequiredMixin, generic.ListView):
     model = User
     template_name = 'users/like_videos.html'
     context_object_name = 'video_list'
@@ -152,3 +156,7 @@ class LikeListView(generic.ListView):
         user = get_object_or_404(User, pk=self.kwargs.get('pk'))
         videos = user.liked_videos.all().order_by('-create_time')
         return videos
+
+    def get_object(self):
+        user = get_object_or_404(User, pk=self.kwargs.get('pk'))
+        return user
