@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y-i+dj&m@dd7@@unus5xe%r^c&_o8_yleev+70#+m9dv)a+res'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,8 +86,8 @@ DATABASES = {
         'NAME': 'video',
         'USER': 'python01',
         'PASSWORD': 's@123456',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'HOST': '192.168.100.16',
+        'PORT': '33306',
     }
 }
 
